@@ -25,7 +25,6 @@ import com.generation.BlogPessoal.repository.PostagensRepository;
 public class PostagemController {
 	@Autowired
 
-	// @SuppressWarnings("unused")
 	private PostagensRepository repository;
 
 	@GetMapping
@@ -35,7 +34,6 @@ public class PostagemController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<PostagemModel> GetById(@PathVariable long id) {
-
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 
 	}
@@ -54,7 +52,6 @@ public class PostagemController {
 
 	@PutMapping
 	public ResponseEntity<PostagemModel> putBody(@RequestBody PostagemModel postagem) {
-
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 
 	}
