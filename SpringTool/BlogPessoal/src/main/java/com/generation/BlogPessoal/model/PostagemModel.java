@@ -37,6 +37,7 @@ public class PostagemModel {
 
 	@ManyToOne
 	@JsonIgnoreProperties("tb_postagens")
+	
 	private Tema tema;
 
 	public Tema getTema() {
