@@ -1,5 +1,6 @@
 package com.generation.farmacia.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -35,7 +36,7 @@ public class ProdutoModel {
 
 	private Date validade;
 
-	private double preco;
+	private BigDecimal preco;
 
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -81,11 +82,11 @@ public class ProdutoModel {
 		this.validade = validade;
 	}
 
-	public double getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
 
