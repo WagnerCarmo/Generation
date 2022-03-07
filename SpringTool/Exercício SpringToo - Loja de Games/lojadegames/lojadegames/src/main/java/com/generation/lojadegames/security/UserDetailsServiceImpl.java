@@ -1,4 +1,4 @@
-package com.generation.BlogPessoal.security;
+package com.generation.lojadegames.security;
 
 import java.util.Optional;
 
@@ -8,23 +8,22 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.generation.BlogPessoal.model.Usuario;
-import com.generation.BlogPessoal.repository.UsuarioRepository;
+import com.generation.lojadegames.model.UsuarioModel;
+import com.generation.lojadegames.repository.UsuarioRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+
 	@Autowired
 	private UsuarioRepository userRepository;
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-	   
-		Optional<Usuario> usuario = userRepository.findByUsuario(userName);	 
-	    usuario.orElseThrow(() -> new UsernameNotFoundException(userName + "not Found."));	
-		
-	    return usuario.map(UserDetailsImpl::new).get();	  
-			   
+
+		Optional<UsuarioModel> usuario = userRepository.findByUsuario(userName);
+		usuario.orElseThrow(() -> new UsernameNotFoundException(userName + "not Found."));
+
+		return usuario.map(UserDetailsImpl::new).get();
+
 	}
-	
 }

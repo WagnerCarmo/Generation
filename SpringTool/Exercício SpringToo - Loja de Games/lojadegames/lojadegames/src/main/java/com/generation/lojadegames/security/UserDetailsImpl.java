@@ -1,11 +1,12 @@
-package com.generation.BlogPessoal.security;
+package com.generation.lojadegames.security;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.generation.BlogPessoal.model.Usuario;
+
+import com.generation.lojadegames.model.UsuarioModel;
 
 public class UserDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
@@ -14,7 +15,7 @@ public class UserDetailsImpl implements UserDetails {
 	private String password;
 	private List <GrantedAuthority> authorities;
 	
-	public UserDetailsImpl(Usuario usuario) {
+	public UserDetailsImpl(UsuarioModel usuario) {
 		this.userName = usuario.getUsuario();
 		this.password = usuario.getSenha();	
 	}
@@ -33,7 +34,6 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public String getUsername() {
-
 		return userName;
 	}
 
@@ -55,7 +55,6 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
-	
 	}
-
+	
 }

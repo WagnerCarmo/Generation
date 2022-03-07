@@ -1,4 +1,4 @@
-package com.generation.BlogPessoal.service;
+package com.generation.lojadegames.service;
 
 import java.nio.charset.Charset;
 import java.util.Optional;
@@ -10,17 +10,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.generation.BlogPessoal.model.Usuario;
-import com.generation.BlogPessoal.model.UsuarioLogin;
-import com.generation.BlogPessoal.repository.UsuarioRepository;
+import com.generation.lojadegames.model.UsuarioLogin;
+import com.generation.lojadegames.model.UsuarioModel;
+import com.generation.lojadegames.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-
+	
 	@Autowired
 	private UsuarioRepository usuarioRepository; 
 	
-	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
+	public Optional<UsuarioModel> cadastrarUsuario(UsuarioModel usuario) {
 
 		if (usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			return Optional.empty();
@@ -30,10 +30,10 @@ public class UsuarioService {
 
 	}
 
-	public Optional<Usuario> atualizarUsuario(Usuario usuario) {
+	public Optional<UsuarioModel> atualizarUsuario(UsuarioModel usuario) {
 
 		if (usuarioRepository.findById(usuario.getId()).isPresent()) {
-			Optional<Usuario> buscaUsuario = usuarioRepository.findByUsuario(usuario.getUsuario());
+			Optional<UsuarioModel> buscaUsuario = usuarioRepository.findByUsuario(usuario.getUsuario());
 
 			if ((buscaUsuario.isPresent()) && (buscaUsuario.get().getId() != usuario.getId()))
 				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuário já existe!", null);
@@ -49,7 +49,7 @@ public class UsuarioService {
 
 	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
 
-		Optional<Usuario> usuario = usuarioRepository.findByUsuario(usuarioLogin.get().getUsuario());
+		Optional<UsuarioModel> usuario = usuarioRepository.findByUsuario(usuarioLogin.get().getUsuario());
 
 		if (usuario.isPresent()) {
 
@@ -57,7 +57,6 @@ public class UsuarioService {
 
 				usuarioLogin.get().setId(usuario.get().getId());
 				usuarioLogin.get().setNome(usuario.get().getNome());
-				usuarioLogin.get().setFoto(usuario.get().getFoto());
 				usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsuario(), usuarioLogin.get().getSenha()));
 				usuarioLogin.get().setSenha(usuario.get().getSenha());
 

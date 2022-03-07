@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -22,7 +22,7 @@ public class CategoriaModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
+	@NotNull
 	@Size(min = 4, max = 100)
 	private String descricao;
 
@@ -54,9 +54,4 @@ public class CategoriaModel {
 		this.produto = produto;
 	}
 
-
-
 }
-
-	
-	
