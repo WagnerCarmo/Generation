@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -38,8 +39,7 @@ public class UsuarioRepositoryTests {
 	public void deveRetornarUmUsuario() {
 		
 		Optional<Usuario> usuario = usuarioRepository.findByUsuario("Tsubasa do Anime");
-		assertTrue(usuario.get().getUsuario().equals("ehmelhorqueoetoo@futibol.com"));		
-		
+		assertTrue(usuario.get().getUsuario().equals("ehmelhorqueoetoo@futibol.com"));			
 	}
 	
 	@Test
@@ -50,5 +50,10 @@ public class UsuarioRepositoryTests {
 		assertTrue(listaDeUsuarios.get(0).getNome().equals("Charlie Brown Senior"));
 		assertTrue(listaDeUsuarios.get(1).getNome().equals("Tsubasa do Anime Senior"));
 		assertTrue(listaDeUsuarios.get(2).getNome().equals("Naruto sei lá do que Senior"));	
+	}
+	
+	@AfterAll     
+	public void end() {
+		usuarioRepository.deleteAll();
 	}
 }

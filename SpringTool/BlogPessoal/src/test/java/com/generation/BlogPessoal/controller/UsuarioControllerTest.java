@@ -39,8 +39,8 @@ public class UsuarioControllerTest {
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>(new Usuario(0L, "Zé Mario", "zemario@ovo.com",
 				"ovofrito123", "https://i.pinimg.com/originals/a5/75/de/a575de26e864c95e1ff43bfbea2f4be2.jpg"));
 
-		ResponseEntity<Usuario> resposta = testRestTemplate.exchange("/usuarios/casdatrar", HttpMethod.POST, requisicao,
-				Usuario.class);
+		ResponseEntity<Usuario> resposta = testRestTemplate
+		.exchange("/usuarios/cadastrar", HttpMethod.POST, requisicao, Usuario.class);
 
 		assertEquals(HttpStatus.CREATED, resposta.getStatusCode());
 		assertEquals(requisicao.getBody().getUsuario(), resposta.getBody().getUsuario());
@@ -53,21 +53,21 @@ public class UsuarioControllerTest {
 	public void deveAtualizarUmUsuario() {
 
 		Optional<Usuario> usuarioCreate = usuarioService
-				.cadastrarUsuario(new Usuario(0L, "Baby Sauro", "naoehamamae@denovo.com.br", "bebezao",
+				.cadastrarUsuario(new Usuario(0L, "Baby Sauro", "naoehamamae@denovo.com.br", "1bebezao",
 						"https://i.pinimg.com/originals/f9/35/41/f93541fe33040ebacd15fc592e6d500b.jpg"));
 
 		Usuario usuarioUpdate = new Usuario(usuarioCreate.get().getId(), "Baby Sauro Senior",
-				"naoehamamae@denovo.com.br", "bebezao",
+				"naoehamamae@denovo.com.br", "1bebezao",
 				"https://i.pinimg.com/originals/f9/35/41/f93541fe33040ebacd15fc592e6d500b.jpg");
 
 		HttpEntity<Usuario> requisicaoDoCorpo = new HttpEntity<Usuario>(usuarioUpdate);
 
 		ResponseEntity<Usuario> respostaDoCorpo = testRestTemplate.withBasicAuth("root", "root")
-				.exchange("/usuarios/update", HttpMethod.PUT, requisicaoDoCorpo, Usuario.class);
+				.exchange("/usuarios/atualizar", HttpMethod.PUT, requisicaoDoCorpo, Usuario.class);
 
 		assertEquals(HttpStatus.OK, respostaDoCorpo.getStatusCode());
-		assertEquals(requisicaoDoCorpo.getBody().getNome(),respostaDoCorpo.getBody().getNome());
-		assertEquals(requisicaoDoCorpo.getBody().getUsuario(),respostaDoCorpo.getBody().getUsuario());
+		assertEquals(requisicaoDoCorpo.getBody().getNome(), respostaDoCorpo.getBody().getNome());
+		assertEquals(requisicaoDoCorpo.getBody().getUsuario(), respostaDoCorpo.getBody().getUsuario());
 
 	}
 }
