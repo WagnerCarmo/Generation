@@ -1,0 +1,120 @@
+/* Style --> Index */
+
+* {
+    text-decoration: none;
+}
+
+.logomarca_principal_index {
+    width: 170px;
+    height: 60px;
+}
+
+.logomarca_principal_index {
+    position: relative;
+}
+
+.menu__opcoes {
+    position: absolute;
+    left: 150px;
+    top: 6px;
+}
+
+.model_abertura {
+    width: 380px;
+    height: 550px;
+}
+
+#menu ul li {
+    display: inline;
+    font-size: 25px;
+}
+
+.bem-vindo {
+    position: absolute;
+    left: 400px;
+    right: 800px;
+    top: 300px;
+}
+
+
+/* Style --> sobre_nos */
+
+.logomarca_principal_sobre_nos {
+    width: 170px;
+    height: 60px;
+}
+
+.sobre_nos__img {
+    width: 400px;
+    height: 600px;
+}
+
+.titulo_texto_sobre_nos {
+    position: absolute;
+    left: 400px;
+    right: 580px;
+    top: 200px;
+}
+
+.texto_sobre_nos {
+    position: absolute;
+    left: 400px;
+    right: 580px;
+    top: 300px;
+}
+
+
+/* Style --> fundadora */
+
+.logomarca_principal_fundadora {
+    width: 170px;
+    height: 60px;
+}
+
+.fundadora__img {
+    width: 800px;
+    height: 500px;
+}
+
+.fundadora {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.fundadora__sobre {
+    position: absolute;
+    left: 400px;
+    right: 580px;
+    top: 200px;
+}
+
+.titulo_texto {
+    position: absolute;
+    left: 400px;
+    right: 580px;
+    top: 100px;
+}
+
+
+/* Style --> contato */
+
+.logomarca_principal_contato {
+    width: 170px;
+    height: 60px;
+}
+
+.contato_model_img {
+    width: 400px;
+    height: 600px;
+}
+
+.contato_model_img {
+    position: relative;
+}
+
+.dados_contato {
+    position: absolute;
+    left: 450px;
+    top: 150px;
+}
