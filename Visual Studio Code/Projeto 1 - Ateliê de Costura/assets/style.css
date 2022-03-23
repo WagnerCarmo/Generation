@@ -1,0 +1,142 @@
+/*----------------------*/
+/* <----- Início -----> */
+/*----------------------*/
+
+
+* {
+    color: black;
+    text-decoration: none;
+}
+
+.logomarca_principal {
+    width: 245px;
+    height: 90px;
+    position: relative;
+}
+
+.barra_inicial {
+    width: 100%;     
+    margin: 15px;          /*distância da margem da página */
+    line-height: 30px;
+    text-align: left;        
+    font-size: 25px;       /* tamanho das opções*/    
+}
+
+.menu_opcoes {
+    position: absolute;
+    left: 250px;
+    top: 19px; 
+}
+
+.modelo_abertura_img {
+    width: 950px;
+    height: 550px;
+    border: 5px solid black;
+}
+
+#menu ul li {
+    display: inline;
+    font-size: 25px;
+    padding: 15px;    
+}
+
+#menu ul li a:hover {
+    color: grey;
+}
+
+.rodape {
+    background: black;
+    width: 960px;
+    height: 50px;
+}
+
+#rodape ul h5 {
+    color: white;
+    text-align: left;
+    line-height: 49px;
+    font-size: 18px;    
+}
+    
+   
+
+/*------------------------*/
+/* <---- Sobre Nós  ----> */
+/*------------------------*/
+
+.sobre_nos_img{
+    width: 950px;
+    height: 550px;
+    position: relative;
+    border: 5px solid black;
+    
+}
+
+.titulo_texto_sobre_nos {
+    position: absolute;
+    left: 460px;
+    right: 610px;
+    top: 220px;
+    text-align: center;
+}
+
+.texto_sobre_nos {
+    position: absolute;
+    left: 450px;
+    right: 610px;
+    top: 290px;
+    font-size: 22px;
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 30px;
+}
+
+
+/*------------------------*/
+/* <---- Jô Moreira ----> */
+/*------------------------*/
+
+
+.fundadora_img {
+    width: 950px;
+    height: 550px;
+    position: relative;
+    border: 5px solid black;
+}
+
+.titulo_texto_fundadora {
+    position: absolute;
+    left: 460px;
+    right: 600px;
+    top: 210px;
+    text-align: center;
+}
+
+.texto_fundadora {
+    position: absolute;
+    left: 450px;
+    right: 600px;
+    top: 280px;
+    font-size: 22px;
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 30px;
+}
+
+
+/*---------------------*/
+/* <---- Contato ----> */
+/*---------------------*/
+
+
+.contato_modelo_img {
+    width: 950px;
+    height: 550px;
+    position: relative;
+    border: 5px solid black;
+}
+
+.dados_contato {
+    position: absolute;
+    left: 530px;
+    top: 160px;
+}
