@@ -1,9 +1,14 @@
 #img-bg {
-    background-image: url(https://i.imgur.com/bNeu8HR.jpg?1);
+    background-image: url(https://i.imgur.com/ZZ6Fdtz.jpg);
 
     min-height: 695px;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.container-fluid {
+    font-family: 'Brush Script MT';
+    font-size: x-large;  
 }
