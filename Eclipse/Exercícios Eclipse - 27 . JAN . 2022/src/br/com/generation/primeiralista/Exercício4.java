@@ -28,12 +28,11 @@ public class Exercício4 {
 		}
 		
 		else {
+			
 			elevadoQuadradado = num*num; 
 		    System.out.println("\nEste número é ímpar e o seu valor elevado ao quadrado é " + elevadoQuadradado);
 		}
 		
 		leia.close();
-	
-	}
-	
+	}	
 }

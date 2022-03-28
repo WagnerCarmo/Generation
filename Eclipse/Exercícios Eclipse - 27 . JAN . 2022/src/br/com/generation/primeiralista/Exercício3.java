@@ -41,8 +41,6 @@ public class Exercício3 {
 
         System.out.println("\nVocê está na categoria: " + categoria + ".");
             
-        leia.close();
-        
+        leia.close();       
 	}	
-	
 }

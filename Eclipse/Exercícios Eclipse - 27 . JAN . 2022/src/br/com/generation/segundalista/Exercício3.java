@@ -31,7 +31,6 @@ public class Exercício3 {
 			if (idadeDigitada > 50) {
 				quantidadeIdosa = quantidadeIdosa + 1;
 			}
-
 		}
 
 		if (quantidadeJovem == 0 && quantidadeIdosa > 0) {
@@ -42,23 +41,18 @@ public class Exercício3 {
 		else if (quantidadeJovem > 0 && quantidadeIdosa == 0) {
 
 			System.out.println("\nNo total, são " + quantidadeJovem + " pessoas com menos de 21 anos e nenhuma pessoa com mais 50 anos.");
-
 		}
 
 		else if (quantidadeJovem == 0 && quantidadeIdosa == 0) {
 
 			System.out.println("\nNo total, nenhuma pessoa possui menos de 21 anos ou mais 50 anos.");
-
 		}
 
 		else {
 
 			System.out.println("\nNo total, são " + quantidadeJovem + " pessoas com menos de 21 anos e " + quantidadeIdosa + " pessoas com mais 50 anos.");
-
 		}
 
 		leia.close();
-
 	}
-
 }

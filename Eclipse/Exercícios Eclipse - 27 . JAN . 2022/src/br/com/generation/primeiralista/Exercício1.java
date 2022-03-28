@@ -35,7 +35,5 @@ public class Exercício1 {
 
 		System.out.println("\n" + nMaior + " é o maior número.");
 		leia.close();
-
 	}
-
 }

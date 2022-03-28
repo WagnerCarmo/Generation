@@ -24,41 +24,33 @@ public class Exercício2 {
 		if (n1 <= n2 && n2 <= n3) {
 
 			System.out.print("\nA odem crescente é: " + n1 + ", " + n2 + " e " + n3 + ".");
-
 		}
 
 		else if (n1 <= n3 && n3 <= n2) {
 
 			System.out.print("\nA odem crescente é: " + n1 + ", " + n3 + " e " + n2 + ".");
-
 		}
 
 		else if (n2 <= n1 && n1 <= n3) {
 
 			System.out.print("\nA ordem crescente dos números é: " + n2 + ", " + n1 + " e " + n3 + ".");
-
 		}
 
 		else if (n2 <= n3 && n3 <= n1) {
 
 			System.out.print("\nA odem crescente é: " + n2 + ", " + n3 + " e " + n1 + ".");
-
 		}
 
 		else if (n3 <= n2 && n2 <= n1) {
 
 			System.out.print("\nA odem crescente é: " + n3 + ", " + n2 + " e " + n1 + ".");
-
 		}
 
 		else {
 
 			System.out.print("\nA odem crescente é: " + n3 + ", " + n1 + " e " + n2 + ".");
-
 		}
 
-		leia.close();
-		
+		leia.close();		
 	}
-
 }
