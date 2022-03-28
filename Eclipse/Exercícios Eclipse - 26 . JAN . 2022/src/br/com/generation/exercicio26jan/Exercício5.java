@@ -27,7 +27,6 @@ public class Exercício5 {
 
 		if (medAluno > 10 || medAluno < 0) {
 			System.out.println("MÉDIA INVÁLIDA");
-
 		}
 
 		else {
@@ -35,9 +34,6 @@ public class Exercício5 {
 			System.out.println("A média do aluno é: " + medAluno);
 
 			leia.close();
-
 		}
-		
 	}
-	
 }

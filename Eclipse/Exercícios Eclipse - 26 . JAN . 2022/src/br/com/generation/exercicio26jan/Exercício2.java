@@ -29,7 +29,5 @@ public class Exercício2 {
 		+ " Anos, " + formaCasa.format (Math.floor(meses)) + " meses e " + formaCasa.format (Math.floor(dias)) + " dias."); 
 	
 		leia.close();
-		
 	}
-	
 }

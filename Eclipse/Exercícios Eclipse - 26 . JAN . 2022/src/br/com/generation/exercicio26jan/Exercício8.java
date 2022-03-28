@@ -27,6 +27,5 @@ public class Exercício8 {
     
     leia.close();
 		
-	}
-	
+	}	
 }

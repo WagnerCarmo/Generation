@@ -37,5 +37,4 @@ public class Exercício7 {
     leia.close();
 
 	}
-	
 }

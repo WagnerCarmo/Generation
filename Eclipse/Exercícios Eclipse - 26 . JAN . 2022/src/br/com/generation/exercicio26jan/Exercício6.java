@@ -21,5 +21,4 @@ public class Exercício6 {
     leia.close();
 
 	}
-	
 }

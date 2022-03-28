@@ -32,6 +32,5 @@ public class Exercício1 {
     
     leia.close();
     
-	}
-	
+	}	
 }
