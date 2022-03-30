@@ -37,7 +37,7 @@ public class UsuarioControllerTest {
 	@Order(1)
 	public void devecadastrarUmUsuario() {
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>(new Usuario(0L, "Zé Mario", "zemario@ovo.com",
-				"ovofrito123", "https://i.pinimg.com/originals/a5/75/de/a575de26e864c95e1ff43bfbea2f4be2.jpg"));
+				"ovofrito123", "https://i.pinimg.com/originals/a5/75/de/a575de26e864c95e1ff43bfbea2f4be2.jpg",""));
 
 		ResponseEntity<Usuario> resposta = testRestTemplate
 		.exchange("/usuarios/cadastrar", HttpMethod.POST, requisicao, Usuario.class);
@@ -54,11 +54,11 @@ public class UsuarioControllerTest {
 
 		Optional<Usuario> usuarioCreate = usuarioService
 				.cadastrarUsuario(new Usuario(0L, "Baby Sauro", "naoehamamae@denovo.com.br", "1bebezao",
-						"https://i.pinimg.com/originals/f9/35/41/f93541fe33040ebacd15fc592e6d500b.jpg"));
+						"https://i.pinimg.com/originals/f9/35/41/f93541fe33040ebacd15fc592e6d500b.jpg",""));
 
 		Usuario usuarioUpdate = new Usuario(usuarioCreate.get().getId(), "Baby Sauro Senior",
 				"naoehamamae@denovo.com.br", "1bebezao",
-				"https://i.pinimg.com/originals/f9/35/41/f93541fe33040ebacd15fc592e6d500b.jpg");
+				"https://i.pinimg.com/originals/f9/35/41/f93541fe33040ebacd15fc592e6d500b.jpg","");
 
 		HttpEntity<Usuario> requisicaoDoCorpo = new HttpEntity<Usuario>(usuarioUpdate);
 

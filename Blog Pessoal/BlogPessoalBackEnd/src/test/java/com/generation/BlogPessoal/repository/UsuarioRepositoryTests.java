@@ -27,11 +27,11 @@ public class UsuarioRepositoryTests {
 	
 	@BeforeAll
 	void start() {
-		usuarioRepository.save(new Usuario(0L,"Charlie Brown Senior", "ogigante@acordou.com","1223456789","https://i.imgur.com/FETvs2O.jpg"));
+		usuarioRepository.save(new Usuario(0L,"Charlie Brown Senior", "ogigante@acordou.com","1223456789","https://i.imgur.com/FETvs2O.jpg",""));
 		
-		usuarioRepository.save(new Usuario(0L,"Tsubasa do Anime Senior", "ehmelhorqueoetoo@futibol.com","pernadepau","https://i.imgur.com/FETvs2O.jpg"));
+		usuarioRepository.save(new Usuario(0L,"Tsubasa do Anime Senior", "ehmelhorqueoetoo@futibol.com","pernadepau","https://i.imgur.com/FETvs2O.jpg",""));
 		
-		usuarioRepository.save(new Usuario(0L,"Naruto sei lá do que Senior", "prefirosakura@cardcaptor.com","samuraix","https://i.imgur.com/FETvs2O.jpg"));
+		usuarioRepository.save(new Usuario(0L,"Naruto sei lá do que Senior", "prefirosakura@cardcaptor.com","samuraix","https://i.imgur.com/FETvs2O.jpg",""));
 	}
 	
 	@Test
