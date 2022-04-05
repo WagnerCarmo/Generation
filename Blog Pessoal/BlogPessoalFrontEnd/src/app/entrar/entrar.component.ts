@@ -10,7 +10,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./entrar.component.css']
 })
 export class EntrarComponent implements OnInit {
-  usuarioLogin: UsuarioLogin = new UsuarioLogin
+  userLogin: UsuarioLogin = new UsuarioLogin
 
   constructor(private authService: AuthService,
     private router: Router
@@ -23,12 +23,12 @@ export class EntrarComponent implements OnInit {
 
   logarUsuario() {
 
-      this.authService.Entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
-      this.usuarioLogin = resp
-      environment.foto = this.usuarioLogin.foto
-      environment.nome = this.usuarioLogin.nome
-      environment.token = this.usuarioLogin.token
-      environment.id = this.usuarioLogin.id
+      this.authService.Entrar(this.userLogin).subscribe((resp: UsuarioLogin) => {
+      this.userLogin = resp
+      environment.foto = this.userLogin.foto
+      environment.nome = this.userLogin.nome
+      environment.token = this.userLogin.token
+      environment.id = this.userLogin.id
 
      
       this.router.navigate(['/home'])
