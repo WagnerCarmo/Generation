@@ -20,6 +20,11 @@ export class AuthService {
     Entrar (usuarioLogin: UsuarioLogin): Observable <UsuarioLogin> { //referencia model usuario
       return this.html.post<UsuarioLogin>('http://localhost:8080/usuarios/logar', usuarioLogin);
     }
+
+    getByIdUser(id: number): Observable<Usuario>{
+      return this.http.get<usuario>(`http://localhost:8080/usuarios/${id}`)
+
+    }
     
     logado () {
       let ok: boolean = false

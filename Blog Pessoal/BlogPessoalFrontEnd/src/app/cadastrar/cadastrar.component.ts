@@ -25,6 +25,8 @@ export class CadastrarComponent implements OnInit {
       this.confirmarSenha = event.target.value  
   }
     cadastrarUsuario () {
+      this.user.tipo = this.tipoUsuario
+
       if (this.usuario.senha != this.confirmarSenha) {
         alert ("As senhas precisam ser iguais!")
       }
