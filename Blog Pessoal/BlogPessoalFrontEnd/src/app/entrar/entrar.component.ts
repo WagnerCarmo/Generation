@@ -9,6 +9,7 @@ import { AuthService } from '../service/auth.service';
   templateUrl: './entrar.component.html',
   styleUrls: ['./entrar.component.css']
 })
+
 export class EntrarComponent implements OnInit {
   userLogin: UsuarioLogin = new UsuarioLogin
 
@@ -29,7 +30,6 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.userLogin.nome
       environment.token = this.userLogin.token
       environment.id = this.userLogin.id
-
      
       this.router.navigate(['/home'])
 

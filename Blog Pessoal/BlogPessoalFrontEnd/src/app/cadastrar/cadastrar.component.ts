@@ -11,6 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class CadastrarComponent implements OnInit {
   usuario: Usuario = new Usuario
   confirmarSenha: string
+  tipoUsuario: string
 
   constructor (
   private authSevice: AuthService,
@@ -25,7 +26,7 @@ export class CadastrarComponent implements OnInit {
       this.confirmarSenha = event.target.value  
   }
     cadastrarUsuario () {
-      this.user.tipo = this.tipoUsuario
+      this.usuario.tipo = this.tipoUsuario
 
       if (this.usuario.senha != this.confirmarSenha) {
         alert ("As senhas precisam ser iguais!")

@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
     private temaService: TemaService,
     private authService: AuthService
 
-
   ) { }
 
   ngOnInit() {
@@ -43,7 +42,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.getAllTema()
-    this.getAllPostagens()
+    this.getAllPostagem()
 
   }
 
@@ -60,14 +59,14 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getAllPostagens() {
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+  getAllPostagem() {
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
     })
   }
 
   findByIdUsuario() {
-    this.authService.getAllUsuario().subscribe((resp: Usuario[]) => {
+    this.authService.getByIdUser(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
@@ -79,11 +78,12 @@ export class HomeComponent implements OnInit {
     this.usuario.id = this.idUsuario
     this.postagem.usuario = this.usuario
 
-    this.postagemService.postPostagens(this.postagem).subscribe((resp: Postagem) => {
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
+      this.getAllPostagem()
       this.postagem = new Postagem()
-      this.getAllPostagens()
+     
 
     })
   }

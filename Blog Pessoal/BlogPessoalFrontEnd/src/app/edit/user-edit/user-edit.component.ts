@@ -11,8 +11,8 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UserEditComponent implements OnInit {
 
-  user: User = new User()
-  isUser: number
+  usuario: Usuario = new Usuario()
+  idUser: number
   ConfirmarSenha: string
   tipoUsuario: string
 
@@ -23,7 +23,7 @@ export class UserEditComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(): {
+  ngOnInit() {
     window.scroll(0,0)
 
     if(environment.token== '') {
@@ -36,7 +36,7 @@ export class UserEditComponent implements OnInit {
   }
 
   confirmeSenha(event: any){
-    this.confirmarSenha = event.target.value
+    this.ConfirmarSenha = event.target.value
   }
 
   tipoUser(event: any){
@@ -44,14 +44,14 @@ export class UserEditComponent implements OnInit {
   }
 
   atualizar(){
-    this.user.tipo = this.tipoUsuario
+    this.usuario.tipo = this.tipoUsuario
 
-      if (this.usuario.senha != this.confirmarSenha) {
+      if (this.usuario.senha != this.ConfirmarSenha) {
         alert ("As senhas precisam ser iguais!")
       }
 
       else {
-        this.authSevice.Cadastrar(this.usuario).subscribe((resp:Usuario) =>  {
+        this.authService.Cadastrar(this.usuario).subscribe((resp:Usuario) =>  {
           this.usuario = resp; 
           this.router.navigate (['/home'])
           alert("Usuário atualizado com sucesso! Faça o login novamente.")
@@ -66,7 +66,7 @@ export class UserEditComponent implements OnInit {
   }
 
   findByIdUser(id: number){
-    this.authService.getByIdUser(id).subscribe((resp: User) =>{
+    this.authService.getByIdUser(id).subscribe((resp: Usuario) =>{
 
     })
   }

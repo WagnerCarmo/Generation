@@ -27,6 +27,7 @@ export class TemaComponent implements OnInit {
 
         this.findAllTema()
     }
+
 cadastrarTema(){
     this.temaService.postarTema(this.tema).subscribe((resp:Tema)=>{
         this.tema=resp

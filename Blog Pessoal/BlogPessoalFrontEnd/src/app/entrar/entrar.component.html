@@ -1,8 +1,8 @@
 <div class="container-fluid">
 
-    <div class="row d-flex align-items-center">
+    <div class="row d-flex align-items-center planoFundo">
 
-        <div class="col-md-6">
+        <div class="col-md-6 corLetra">
 
             <div class="row d-flex justify-content-center">
 
@@ -10,24 +10,24 @@
 
                     <h1 class="text-center mb-4">Entrar</h1>
 
-                    <div class="form-group ">
+                    <div class="form-group">
                         <label for="usuario">Usuário</label>
-                        <input [(ngModel)]="userLogin.usuario" class="form-control border border-dark" type="text"
+                        <input [(ngModel)]="userLogin.usuario" class="bg-card form-control border" type="text"
                             name="usuario" id="usuario" placeholder="Seu Usuário">
                     </div>
 
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input [(ngModel)]="userLogin.senha" class="form-control border border-dark" type="password"
+                        <input [(ngModel)]="userLogin.senha" class="bg-card form-control border border-dark" type="password"
                             name="senha" id="senha" placeholder="Sua Senha">
                     </div>
 
                     <div class="d-flex justify-content-center">
                         <button (click)="logarUsuario()" type="submit"
-                            class="btn btn-light border-dark mt-4">Entrar</button>
+                            class="btn btn-light border-dark mt-4 bg-card">Entrar</button>
                     </div>
 
-                    <hr class="mt-5 mb-5">
+                    <hr class="mt-5 mb-5 bg-dark">
                     <p class="text-center">Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
                     </p>
                 </div>
@@ -35,5 +35,6 @@
         </div>
 
         <div class="col-md-6" id="img-bg"></div>
+        
     </div>
 </div>
