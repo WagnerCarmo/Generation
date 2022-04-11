@@ -4,48 +4,47 @@
  caso contrário zerar tal variável. A hora excedente de trabalho vale R$ 20,00. No final do processamento 
  imprimir o salário total e o salário excedente.*/
 
-programa
-{
+programa {
 
-	funcao inicio()
-	{
+	funcao inicio () {
 
      real c, n, salario, salario_nr, excesso_ht, valor_ex
 
      salario = 10
      
-     escreva("Código do Funcionário ")
+     escreva("Código do Funcionário: ")
      leia(c)
      
-     escreva("Digte as Horas Trabalhadas ")
+     escreva("Digite as Horas Trabalhadas: ")
      leia(n)
 	
 				
-		se (n<=50) {
-		salario_nr= n * salario
-		excesso_ht= 0
-		escreva("As horas não foram excedidas em  ", excesso_ht, "\nSeu salário é de R$ ", salario_nr)
+		se (n <= 50) {
+			
+			salario_nr= n * salario
+			excesso_ht= 0
+		
+			escreva("\nAs horas não foram excedidas em  ", excesso_ht, "\nSeu salário é de R$ ", salario_nr,"\n")
 	     }
 	     
 		   senao {
+		   
 		   excesso_ht=n - 50
 		   valor_ex= excesso_ht * 20
 		   salario_nr=n * salario
 		   
-		   escreva("Foram ", excesso_ht," horas excedidas\n") 
+		   escreva("\nForam ", excesso_ht," horas excedidas\n") 
 		   
-		   escreva("Seu salário normal é de R$ ", salario_nr, " e o valor excedido é de R$ ", valor_ex)
-	        }
-     
+		   escreva("Seu salário normal é de R$ ", salario_nr, " e o valor excedido é de R$ ", valor_ex,"\n")
+	    	}
      }
-
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 887; 
+ * @POSICAO-CURSOR = 697; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
