@@ -10,42 +10,42 @@ programa {
 		
 	funcao inicio () {
 	
-	inteiro lcto[10], cont, nv = 0 , maior = 0
+	inteiro lcto[10], cont, numVezesAparece = 0, maiorNum = 0
      real soma = 0.0   
 	
            para (cont=0; cont<10; cont++) {
 	           lcto[cont] = Util.sorteia(1,6)    
 	      
-	           se (lcto[cont]>maior) {
-	              maior = lcto[cont]
-	              nv = 1
+	           se (lcto[cont] > maiorNum) {
+	              maiorNum = lcto[cont]
+	              numVezesAparece = 1
 	           }
 
-	           senao se(lcto[cont] == maior) {
-	           nv++
-	           
+	           senao se (lcto[cont] == maiorNum) {
+	           		numVezesAparece++
 	           }
 	           
-	      soma+=lcto[cont]
-	           
+	      	 soma+=lcto[cont]
 	      }
 	           
-	      para (cont=0; cont < 10; cont++) {	
-	           escreva("[", lcto[cont], "],")
-	     
+	      escreva("Números sorteados: ")
+	           
+	      para (cont=0; cont <8; cont++) {	
+	            
+	            escreva(lcto[cont], ", ")
 	      }
+
+	      escreva(lcto[8]," e ", lcto[9],".")
 	     
-           escreva("\nMédia de: ", soma/10, "\nNº de Aparições: ",nv,"\n")
-	
+           escreva("\n\nMédia de Pontos: ", soma/10, "\nNº de Aparições da Maior Pontuação: ", numVezesAparece, "\n")
 	}
-	
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 999; 
+ * @POSICAO-CURSOR = 668; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

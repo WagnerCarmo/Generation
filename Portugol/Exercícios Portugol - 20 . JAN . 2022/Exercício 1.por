@@ -4,42 +4,40 @@
 
 programa {
 
-	funcao inicio() {
+	funcao inicio () {
 
-       inteiro cont, pont[5], mPts = 0
+        inteiro cont, pont[5], maiorPto = 0
 
-            para (cont = 0; cont<5; cont++) {
+        para (cont = 0; cont<5; cont++) {
 
-            escreva("Pontos: ")
-            leia (pont[cont])
+           escreva("Digite o valor da pontuação: ")
+           leia (pont[cont])
 
-                se (pont[cont]> mPts) { //ganha a maior pontuação
-                   mPts =pont[cont] //guarda a maior pontuação            
-                
-                }
-          
-            }
+           se (pont[cont]> maiorPto) { //ganha a maior pontuação
+               maiorPto = pont[cont] //guarda a maior pontuação                 
+           }   
+        }
 	        
-	        //escreva (pont[0], "\n", pont[3]) (para saber o valor que foi atribuido)
+	   //escreva (pont[0], "\n", pont[3]) (para saber o valor que foi atribuido)
 	        
-	       limpa()
+	   limpa ()
+
+	   escreva("Pontuação na ordem digitada: \n\n")
 	        
-	       para (cont = 0; cont<5; cont++) {
-	            escreva("\nPontos: ", pont[cont],"\n")
-	      		
-	       } 
+	   para (cont = 0; cont<5; cont++) {
+	   	    
+	         escreva(cont+1, "ª Pontuação: ", pont[cont], " Pontos\n")	      		
+	   } 
 		           
-		  escreva("\nA maior pontuação: ", mPts,"Pts\n")
-		  
+		 escreva("\nMaior Pontuação: ", maiorPto," Pontos\n")
 	}
-	
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 876; 
+ * @POSICAO-CURSOR = 708; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
