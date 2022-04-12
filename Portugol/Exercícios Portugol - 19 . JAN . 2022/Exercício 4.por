@@ -5,31 +5,31 @@
 
 programa {
 
-	funcao inicio() {
+   funcao inicio () {
 		
-	inteiro num
+   inteiro num
 	
-	escreva("\nDigite o Número: ")
-	leia(num)
+   escreva("Digite o Número: ")
+   leia(num)
 
-     escreva("\nNúmero: ", num)
+   escreva ("\nA ordem é: ",num)
 	
-	    enquanto (num<100 e num>0) {
+	 enquanto (num < 100) {
 	
 	    num = num * 3
-	    escreva("\nNúmero: ", num)
+	    
+	    escreva (" - ", num)    
+	 }
 
-	    }
-	
-	}
-			
+	 escreva ("\n")
+   }	
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 485; 
+ * @POSICAO-CURSOR = 410; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

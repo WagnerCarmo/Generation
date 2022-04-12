@@ -4,7 +4,7 @@
 
 programa {
 	
-	funcao inicio() {
+	funcao inicio () {
 
      inteiro contador, qtde = 0, soma = 0
  
@@ -12,21 +12,18 @@ programa {
 
 	          se (contador % 3 == 0) {
 		         soma = soma + contador qtde++
-
 	          }
 	     }
 
-	escreva("A soma de todos os valores solicitados é de ", soma, qtde, "\n")  
-	
+		escreva("A soma de todos os valores solicitados é de ", soma, "\n")  	
      }
-	
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 302; 
+ * @POSICAO-CURSOR = 382; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
