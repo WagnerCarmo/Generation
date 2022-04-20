@@ -24,7 +24,7 @@ export class EntrarComponent implements OnInit {
 
   logarUsuario() {
 
-      this.authService.Entrar(this.userLogin).subscribe((resp: UsuarioLogin) => {
+      this.authService.entrar(this.userLogin).subscribe((resp: UsuarioLogin) => {
       this.userLogin = resp
       environment.foto = this.userLogin.foto
       environment.nome = this.userLogin.nome

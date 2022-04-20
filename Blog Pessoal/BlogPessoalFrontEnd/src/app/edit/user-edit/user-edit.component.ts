@@ -51,7 +51,7 @@ export class UserEditComponent implements OnInit {
       }
 
       else {
-        this.authService.Cadastrar(this.usuario).subscribe((resp:Usuario) =>  {
+        this.authService.cadastrar(this.usuario).subscribe((resp:Usuario) =>  {
           this.usuario = resp; 
           this.router.navigate (['/home'])
           alert("Usuário atualizado com sucesso! Faça o login novamente.")

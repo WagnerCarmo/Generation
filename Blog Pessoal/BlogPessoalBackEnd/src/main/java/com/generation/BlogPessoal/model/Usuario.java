@@ -1,4 +1,4 @@
-package com.generation.BlogPessoal.model;
+package com.generation.blogPessoal.model;
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,7 +16,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_usuarios")
+@Table(name = "usuarios")
 public class Usuario {
 
 	@Id
@@ -27,33 +26,33 @@ public class Usuario {
 	@NotNull(message = "O atributo Nome é Obrigatório!")
 	private String nome;
 
+	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caractéres")
+	private String foto;
+
+	private String tipo;
+
 	@NotNull(message = "O atributo Usuário é Obrigatório!")
-	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
 
 	@NotBlank(message = "O atributo Senha é Obrigatório!")
 	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
 	private String senha;
 
-	private String foto;
-	
-	private String tipo;
-	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
-	private List<PostagemModel> postagem;
-	
-	public Usuario(Long id, String nome, String usuario, String senha, String foto, String tipo) {
+	private List<Postagem> postagem;
+
+	public Usuario(Long id, String nome, String foto, String usuario, String senha) {
 		this.id = id;
 		this.nome = nome;
+		this.foto = foto;
 		this.usuario = usuario;
 		this.senha = senha;
-		this.foto = foto;
-		this.tipo = tipo;
 	}
-	
-	public Usuario() { }
-	
+
+	public Usuario() {
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -68,6 +67,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public String getUsuario() {
@@ -86,19 +93,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
-	public List<PostagemModel> getPostagemModel() {
+	public List<Postagem> getPostagem() {
 		return postagem;
 	}
 
-	public void setPostagemModel(List<PostagemModel> postagem) {
+	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
 
@@ -110,13 +109,4 @@ public class Usuario {
 		this.tipo = tipo;
 	}
 
-	public List<PostagemModel> getPostagem() {
-		return postagem;
-	}
-
-	public void setPostagem(List<PostagemModel> postagem) {
-		this.postagem = postagem;
-	}
-
-	
 }

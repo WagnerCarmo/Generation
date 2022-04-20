@@ -1,4 +1,4 @@
-package com.generation.BlogPessoal.model;
+package com.generation.blogPessoal.model;
 
 import java.util.List;
 
@@ -10,26 +10,27 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name="tb_temas")
+@Table(name = "tema")
 public class Tema {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-    @NotNull
-    @Size(min=4, max=100)
-    private String descricao;
 
-    @OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("tema")
-    private List <PostagemModel> postagem;
-    
+	@NotNull
+	private String descricao;
+
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
+	// mappedBy - informa qual é a variável
+	// cascade - não deixa excluir a tabela tema pq há postagens que estão
+	// conectadas a ele
+	@JsonIgnoreProperties("tema")
+	private List<Postagem> postagens;
+
 	public long getId() {
 		return id;
 	}
@@ -46,12 +47,12 @@ public class Tema {
 		this.descricao = descricao;
 	}
 
-	public List<PostagemModel> getPostagem() {
-		return postagem;
+	public List<Postagem> getPostagens() {
+		return postagens;
 	}
 
-	public void setPostagem(List<PostagemModel> postagem) {
-		this.postagem = postagem;
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
 	}
-	
+
 }
